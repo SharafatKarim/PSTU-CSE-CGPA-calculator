@@ -4,8 +4,8 @@ This CGPA calculator is designed for students in the Computer Science and Engine
 
 Visit site: [PSTU CSE CGPA Calculator](https://github.com/SharafatKarim/PSTU-CSE-CGPA-calculator)
 
-> warning!
-> Still in development. Feel free to contribute.
+> [!WARNING]
+> Still in development. Feel free to contribute. 🏅
 
 ## Features
 
@@ -15,7 +15,17 @@ Unlike other CGPA calculators, you don't have to put subject names and credits m
 
 1. Clone the repository
 2. Open `index.html` in your browser
-3. Start contributing 🫠
+3. Start building 🫠
+
+## Contributing
+
+Feel free to contribute to this project. You can contribute by:
+
+- Reporting bugs
+- Suggesting new features
+- Contributing code
+
+Feel free to open an issue or create a pull request.
 
 ## License
 
