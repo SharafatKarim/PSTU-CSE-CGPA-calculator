@@ -2,7 +2,7 @@
 
 This CGPA calculator is designed for students in the Computer Science and Engineering (CSE) department at PSTU, especially my batchmates. It enables students to calculate their cumulative grade point average (CGPA) based on their grades and credits for each semester.
 
-Visit site: [PSTU CSE CGPA Calculator](https://github.com/SharafatKarim/PSTU-CSE-CGPA-calculator)
+Visit site: [PSTU CSE CGPA Calculator](https://sharafat.is-a.dev/PSTU-CSE-CGPA-calculator/)
 
 > [!WARNING]
 > Still in development. Feel free to contribute. 🏅
