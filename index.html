@@ -13,18 +13,126 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">PSTU CSE CGPA calculator</a>
-            <button class="btn btn-outline-success" type="submit">GitHub repo</button>
+            <a href="https://github.com/SharafatKarim/PSTU-CSE-CGPA-calculator"><button class="btn btn-outline-success"
+                    type="submit">GitHub repo</button></a>
         </div>
     </nav>
 
     <ul class="nav nav-underline justify-content-center">
         <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#firstSem">First Semester</a>
+            <a class="nav-link active" aria-current="page" href="#gradingSystem">Grading system</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#firstSem">First Semester</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#secondSem">Second Semester</a>
         </li>
     </ul>
+
+    <!-- Grading system reference -->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3 id="gradingSystem">Grading system</h3>
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Marks</th>
+                            <th scope="col">Grade</th>
+                            <th scope="col">Grade point</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">80-100</th>
+                            <td>A+</td>
+                            <td>4.00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">75-79</th>
+                            <td>A</td>
+                            <td>3.75</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">70-74</th>
+                            <td>A-</td>
+                            <td>3.50</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">65-69</th>
+                            <td>B+</td>
+                            <td>3.25</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">60-64</th>
+                            <td>B</td>
+                            <td>3.00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">55-59</th>
+                            <td>B-</td>
+                            <td>2.75</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">50-54</th>
+                            <td>C+</td>
+                            <td>2.50</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">45-49</th>
+                            <td>C</td>
+                            <td>2.25</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">40-44</th>
+                            <td>D</td>
+                            <td>2.00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">0-39</th>
+                            <td>F</td>
+                            <td>0.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col">
+                <h3>Sketch</h3>
+                <h3
+                    class="text-center d-flex justify-content-center align-items-center flex-column flex-md-row flex-lg-column">
+                    <span>Grade point (GP)</span>
+                </h3>
+                <h3
+                    class="text-center d-flex justify-content-center align-items-center flex-column flex-md-row flex-lg-column">
+                    <span>Letter grade (LG)</span>
+                </h3>
+                <h3
+                    class="text-center d-flex justify-content-center align-items-center flex-column flex-md-row flex-lg-column">
+                    <span>Grade point average (GPA)</span>
+                    <span class="badge bg-success">GPA = Σ(Ci * Gi) / ΣCi</span>
+                </h3>
+                <h3
+                    class="text-center d-flex justify-content-center align-items-center flex-column flex-md-row flex-lg-column">
+                    <span>Previous cumulative grade point average (PCGPA)</span>
+                </h3>
+                <h3
+                    class="text-center d-flex justify-content-center align-items-center flex-column flex-md-row flex-lg-column">
+                    <span>Previous course credit hour (PCCH)</span>
+                </h3>
+                <h3
+                    class="text-center d-flex justify-content-center align-items-center flex-column flex-md-row flex-lg-column">
+                    <span>Cumulative grade point average (CGPA)</span>
+                    <span class="badge bg-success">CGPA = Σ(Ci * Gi) + (PCGPA * PCCH) / (ΣCi + PCCH)</span>
+                </h3>
+                <h3
+                    class="text-center d-flex justify-content-center align-items-center flex-column flex-md-row flex-lg-column">
+                    <span>Course credit hour (CCH)</span>
+                    <span class="badge bg-success">CCH = ΣCi</span>
+                </h3>
+            </div>
+        </div>
+    </div>
 
     <!-- 
     ___                _   
