@@ -54,7 +54,7 @@ ________        .__                                      .___
     </div>
 
     <div class="container table-responsive">
-        <table class="table table-hover">
+        <table class="table">
             <thead>
                 <tr>
                     <th scope="col">Serial</th>
@@ -162,29 +162,33 @@ _______   _____/ ____\___________   ____   ____   ____  ____
             </div>
             <div class="col">
                 <h3>Sketch</h3>
-                <h3
+                <h5
                     class="text-center d-flex justify-content-center align-items-center flex-column flex-md-row flex-lg-column">
-                    <span>Grade point (GP)</span>
                     <span>Letter grade (LG)</span>
+                    <span>Grade point (GP)</span>
+                    <span>Grade point per subject (GPi)</span>
                     <span>Credit per hour (C)</span>
-                </h3>
-                <h3
+                    <span>Credit per hour per subject (Ci)</span>
+                </h5>
+                <h5
                     class="text-center d-flex justify-content-center align-items-center flex-column flex-md-row flex-lg-column">
                     <span>Course credit hour (CCH)</span>
                     <span class="badge bg-success">CCH = ΣCi</span>
-                </h3>
-                <h3
+                </h5>
+                <hr>
+                <h5
                     class="text-center d-flex justify-content-center align-items-center flex-column flex-md-row flex-lg-column">
-                    <span>Grade point average (GPA)</span>
+                    <span>Grade Point Average (GPA)</span>
                     <span class="badge bg-success">GPA = Σ(Ci * GPi) / ΣCi</span>
-                </h3>
-                <h3
+                </h5>
+                <hr>
+                <h5
                     class="text-center d-flex justify-content-center align-items-center flex-column flex-md-row flex-lg-column">
-                    <span>Cumulative grade point average (CGPA)</span>
+                    <span>Cumulative Grade Point Average (CGPA)</span>
                     <span>Previous CGPA (PCGPA)</span>
-                    <span>Previous course credit hour (PCCH)</span>
+                    <span>Previous Course Credit Hour (PCCH)</span>
                     <span class="badge bg-success">CGPA = (Σ(Ci * GPi) + (PCGPA * PCCH)) / (ΣCi + PCCH)</span>
-                </h3>
+                </h5>
             </div>
         </div>
     </div>
