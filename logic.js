@@ -1,39 +1,14 @@
-var selected_sem = 1;
-const SEM_INFO = {
-    first: {
-        subjects: [{ code: 'PHY-111', subject: 'Physics-I', credit: 3 },
-        { code: 'PHY-112', subject: 'Physics-I Sessional.', credit: 0.75 },
-        { code: 'CHE-111', subject: 'Chemistry', credit: 3 },
-        { code: 'CHE-112', subject: 'Chemistry Sessional', credit: 0.75 },
-        { code: 'MAT-111', subject: 'Mathematics-I', credit: 3 },
-        { code: 'EEE-111', subject: 'Basic Electrical Engineering', credit: 3 },
-        { code: 'EEE-112', subject: 'Basic Electrical Engineering Sessional', credit: 1.5 },
-        { code: 'CIT-111', subject: 'Programming Language', credit: 3 },
-        { code: 'CIT-112', subject: 'Programming Language Sessional', credit: 1.5 },
-        { code: 'CCE-112', subject: 'Engineering Drawing', credit: 0.75 }],
-        previous_cch: 0
-    },
-    second: {
-        subjects: [{ code: 'PHY-121', subject: 'Physics-II', credit: 3 },
-        { code: 'PHY-122', subject: 'Physics-II Sessional.', credit: 0.75 },
-        { code: 'MAT-121', subject: 'Mathematics-II', credit: 3 },
-        { code: 'CIT-121', subject: 'Discrete Mathematics', credit: 3 },
-        { code: 'LCM-121', subject: 'Communicative English', credit: 2 },
-        { code: 'EEE-121', subject: 'Electronic Device and Circuits', credit: 3 },
-        { code: 'EEE-122', subject: 'Electronic Device and Circuits Sessional', credit: 1.5 },
-        { code: 'CCE-121', subject: 'Object Oriented Programming', credit: 3 },
-        { code: 'CCE-122', subject: 'Object Oriented Programming Sessional', credit: 1.5 }],
-        previous_cch: 20.25
-    }
-}
+import {SEM_INFO} from './variables.js';
 
-function tableDrawer(sem) {
+var selected_sem = SEM_INFO.first;
+
+function tableDrawerExecution() {
     var myTableBodyDiv = document.getElementById("VarTable");
-    if (myTableBodyDiv.hasChildNodes()) {
+    while (myTableBodyDiv.hasChildNodes()) {
         myTableBodyDiv.removeChild(myTableBodyDiv.childNodes[0]);
     }
 
-    var subjects = sem.subjects;
+    var subjects = selected_sem.subjects;
     for (var i = 0; i < subjects.length; i++) {
         var tr = document.createElement('TR');
 
@@ -53,11 +28,103 @@ function tableDrawer(sem) {
         td.appendChild(document.createTextNode(subjects[i].credit));
         tr.appendChild(td);
 
+        var td = document.createElement('TD');
+        var div = document.createElement('DIV');
+        div.className = "row g-3 align-items-center";
+        var input = document.createElement('INPUT');
+        input.type = "text";
+        input.className = "form-control";
+        input.placeholder = "0";
+        input.id = "g" + i;
+        div.appendChild(input);
+        td.appendChild(div);
+        tr.appendChild(td);
+
+        var tdLG = document.createElement('TD');
+        tdLG.id = "L" + i;
+        tdLG.appendChild(document.createTextNode("0"));
+        tr.appendChild(tdLG);
+
+        if (i === 0) {
+            var tdGPA = document.createElement('TD');
+            tdGPA.id = "GPA";
+            tdGPA.rowSpan = 100;
+            tdGPA.appendChild(document.createTextNode("0"));
+            tr.appendChild(tdGPA);
+
+            if (selected_sem.previous_cch == 0) {
+                var td = document.createElement('TD');
+                td.id = "PGPA";
+                td.rowSpan = 100;
+                td.appendChild(document.createTextNode("0"));
+                tr.appendChild(td);
+            } else {
+                var td = document.createElement('TD');
+                var div = document.createElement('DIV');
+                div.className = "row g-3 align-items-center";
+                var input = document.createElement('INPUT');
+                input.type = "text";
+                input.className = "form-control";
+                input.placeholder = "0";
+                input.id = "PGPA";
+                div.appendChild(input);
+                td.rowSpan = 100;
+                td.appendChild(div);
+                tr.appendChild(td);
+            }
+
+            var tdPCCH = document.createElement('TD');
+            tdPCCH.id = "PCCH";
+            tdPCCH.rowSpan = 100;
+            tdPCCH.appendChild(document.createTextNode(selected_sem.previous_cch));
+            tr.appendChild(tdPCCH);
+
+            var tdCGPA = document.createElement('TD');
+            tdCGPA.id = "CGPA";
+            tdCGPA.rowSpan = 100;
+            tdCGPA.appendChild(document.createTextNode("0"));
+            tr.appendChild(tdCGPA);
+
+            var tdCCH = document.createElement('TD');
+            tdCCH.id = "CCH";
+            tdCCH.rowSpan = 100;
+            tdCCH.appendChild(document.createTextNode("0"));
+            tr.appendChild(tdCCH);
+
+            var tdRemarks = document.createElement('TD');
+            tdRemarks.id = "remarks";
+            tdRemarks.rowSpan = 100;
+            tdRemarks.appendChild(document.createTextNode("0"));
+            tr.appendChild(tdRemarks);
+        }
+
         myTableBodyDiv.appendChild(tr);
     }
 }
 
-tableDrawer(SEM_INFO.first);
+function tableSelector(sem_no) {
+    for (const key in SEM_INFO) {
+        sem_no--;
+        if (sem_no) {
+            continue;
+        }
+        console.log(key);
+        selected_sem = SEM_INFO[key];
+        document.getElementById("SemName").innerText = key.charAt(0).toUpperCase() + key.slice(1) + " Semester";
+        break;
+    }
+    tableDrawerExecution();
+}
+
+document.querySelectorAll('.page-link').forEach(button => {
+    button.addEventListener('click', function () {
+        document.querySelectorAll('.page-item').forEach(item => item.classList.remove('active'));
+        this.parentElement.classList.add('active');
+        tableSelector(parseInt(this.innerText));
+    });
+});
+
+tableDrawerExecution();
 
 function calculateLetterGrade(grade) {
     if (grade >= 4) {
@@ -83,181 +150,40 @@ function calculateLetterGrade(grade) {
     }
 }
 
-document.getElementById('calculate-1').addEventListener('click', function () {
-    let total_grade = 0;
+document.getElementById('calculate').addEventListener('click', function () {
+    let total_GradexCredit = 0;
     let total_credit = 0;
     let f_grade = 0;
 
-    document.getElementById("LG11").innerText = calculateLetterGrade(document.getElementById('s11').value);
-    total_credit += parseFloat(document.getElementById('c11').innerText);
-    total_grade += parseFloat(document.getElementById('s11').value) * parseFloat(document.getElementById('c11').innerText);
-    if (document.getElementById('s11').value < 2) {
-        f_grade += 1;
+    for (var i = 0; i < selected_sem.subjects.length; i++) {
+        let grade = parseFloat(document.getElementById('g' + i).value);
+        let credit = selected_sem.subjects[i].credit;
+
+        document.getElementById("L" + i).innerText = calculateLetterGrade(grade);
+        total_credit += credit;
+        total_GradexCredit += grade * credit;
+        if (grade < 2) {
+            f_grade += 1;
+        }
     }
 
-    document.getElementById("LG12").innerText = calculateLetterGrade(document.getElementById('s12').value);
-    total_credit += parseFloat(document.getElementById('c12').innerText);
-    total_grade += parseFloat(document.getElementById('s12').value) * parseFloat(document.getElementById('c12').innerText);
-    if (document.getElementById('s12').value < 2) {
-        f_grade += 1;
-    }
+    let gpa = total_GradexCredit / total_credit;
 
-    document.getElementById("LG13").innerText = calculateLetterGrade(document.getElementById('s13').value);
-    total_credit += parseFloat(document.getElementById('c13').innerText);
-    total_grade += parseFloat(document.getElementById('s13').value) * parseFloat(document.getElementById('c13').innerText);
-    if (document.getElementById('s13').value < 2) {
-        f_grade += 1;
-    }
+    let PCCH = document.getElementById('PCCH').innerText;
+    let total_doubled_credit = total_credit + parseFloat(PCCH);
 
-    document.getElementById("LG14").innerText = calculateLetterGrade(document.getElementById('s14').value);
-    total_credit += parseFloat(document.getElementById('c14').innerText);
-    total_grade += parseFloat(document.getElementById('s14').value) * parseFloat(document.getElementById('c14').innerText);
-    if (document.getElementById('s14').value < 2) {
-        f_grade += 1;
-    }
+    let PGPA = 0;
+    if (selected_sem.previous_cch != 0)
+        PGPA = document.getElementById('PGPA').value;
+    console.log(PGPA, PCCH, total_GradexCredit, total_doubled_credit);
 
-    document.getElementById("LG15").innerText = calculateLetterGrade(document.getElementById('s15').value);
-    total_credit += parseFloat(document.getElementById('c15').innerText);
-    total_grade += parseFloat(document.getElementById('s15').value) * parseFloat(document.getElementById('c15').innerText);
-    if (document.getElementById('s15').value < 2) {
-        f_grade += 1;
-    }
+    let CGPA = (parseFloat(PGPA) * parseFloat(PCCH) + total_GradexCredit) / total_doubled_credit;
 
-    document.getElementById("LG16").innerText = calculateLetterGrade(document.getElementById('s16').value);
-    total_credit += parseFloat(document.getElementById('c16').innerText);
-    total_grade += parseFloat(document.getElementById('s16').value) * parseFloat(document.getElementById('c16').innerText);
-    if (document.getElementById('s16').value < 2) {
-        f_grade += 1;
-    }
+    document.getElementById("GPA").innerText = gpa.toFixed(3);
+    document.getElementById("CCH").innerText = total_doubled_credit.toFixed(3);
+    document.getElementById("CGPA").innerText = CGPA.toFixed(3);
 
-    document.getElementById("LG17").innerText = calculateLetterGrade(document.getElementById('s17').value);
-    total_credit += parseFloat(document.getElementById('c17').innerText);
-    total_grade += parseFloat(document.getElementById('s17').value) * parseFloat(document.getElementById('c17').innerText);
-    if (document.getElementById('s17').value < 2) {
-        f_grade += 1;
-    }
+    document.getElementById("remarks").innerText = "F in " + f_grade;
 
-    document.getElementById("LG18").innerText = calculateLetterGrade(document.getElementById('s18').value);
-    total_credit += parseFloat(document.getElementById('c18').innerText);
-    total_grade += parseFloat(document.getElementById('s18').value) * parseFloat(document.getElementById('c18').innerText);
-    if (document.getElementById('s18').value < 2) {
-        f_grade += 1;
-    }
-
-    document.getElementById("LG19").innerText = calculateLetterGrade(document.getElementById('s19').value);
-    total_credit += parseFloat(document.getElementById('c19').innerText);
-    total_grade += parseFloat(document.getElementById('s19').value) * parseFloat(document.getElementById('c19').innerText);
-    if (document.getElementById('s19').value < 2) {
-        f_grade += 1;
-    }
-
-    document.getElementById("LG110").innerText = calculateLetterGrade(document.getElementById('s110').value);
-    total_credit += parseFloat(document.getElementById('c110').innerText);
-    total_grade += parseFloat(document.getElementById('s110').value) * parseFloat(document.getElementById('c110').innerText);
-    if (document.getElementById('s110').value < 2) {
-        f_grade += 1;
-    }
-
-    let gpa = total_grade / total_credit;
-
-    let PCCH1 = document.getElementById('PCCH1').innerText;
-    total_doubled_credit = total_credit + parseFloat(PCCH1);
-    // total_credit += parseFloat(PCCH1);
-
-    let PGPA1 = document.getElementById('PGPA1').innerText;
-    let CGPA = (parseFloat(PGPA1) * parseFloat(PCCH1) + gpa * total_credit) / total_doubled_credit;
-
-    document.getElementById("GPA1").innerText = gpa.toFixed(3);
-    document.getElementById("CCH1").innerText = total_doubled_credit.toFixed(3);
-    document.getElementById("CGPA1").innerText = CGPA.toFixed(3);
-
-    document.getElementById("remarks1").innerText = "F in " + f_grade;
-
-    alert('Your GPA is ' + CGPA.toFixed(3));
-});
-
-document.getElementById('calculate-2').addEventListener('click', function () {
-    let total_grade = 0;
-    let total_credit = 0;
-    let f_grade = 0;
-
-    document.getElementById("LG21").innerText = calculateLetterGrade(document.getElementById('s21').value);
-    total_credit += parseFloat(document.getElementById('c21').innerText);
-    total_grade += parseFloat(document.getElementById('s21').value) * parseFloat(document.getElementById('c21').innerText);
-    if (document.getElementById('s21').value < 2) {
-        f_grade += 1;
-    }
-
-    document.getElementById("LG22").innerText = calculateLetterGrade(document.getElementById('s22').value);
-    total_credit += parseFloat(document.getElementById('c22').innerText);
-    total_grade += parseFloat(document.getElementById('s22').value) * parseFloat(document.getElementById('c22').innerText);
-    if (document.getElementById('s22').value < 2) {
-        f_grade += 1;
-    }
-
-    document.getElementById("LG23").innerText = calculateLetterGrade(document.getElementById('s23').value);
-    total_credit += parseFloat(document.getElementById('c23').innerText);
-    total_grade += parseFloat(document.getElementById('s23').value) * parseFloat(document.getElementById('c23').innerText);
-    if (document.getElementById('s23').value < 2) {
-        f_grade += 1;
-    }
-
-    document.getElementById("LG24").innerText = calculateLetterGrade(document.getElementById('s24').value);
-    total_credit += parseFloat(document.getElementById('c24').innerText);
-    total_grade += parseFloat(document.getElementById('s24').value) * parseFloat(document.getElementById('c24').innerText);
-    if (document.getElementById('s24').value < 2) {
-        f_grade += 1;
-    }
-
-    document.getElementById("LG25").innerText = calculateLetterGrade(document.getElementById('s25').value);
-    total_credit += parseFloat(document.getElementById('c25').innerText);
-    total_grade += parseFloat(document.getElementById('s25').value) * parseFloat(document.getElementById('c25').innerText);
-    if (document.getElementById('s25').value < 2) {
-        f_grade += 1;
-    }
-
-    document.getElementById("LG26").innerText = calculateLetterGrade(document.getElementById('s26').value);
-    total_credit += parseFloat(document.getElementById('c26').innerText);
-    total_grade += parseFloat(document.getElementById('s26').value) * parseFloat(document.getElementById('c26').innerText);
-    if (document.getElementById('s26').value < 2) {
-        f_grade += 1;
-    }
-
-    document.getElementById("LG27").innerText = calculateLetterGrade(document.getElementById('s27').value);
-    total_credit += parseFloat(document.getElementById('c27').innerText);
-    total_grade += parseFloat(document.getElementById('s27').value) * parseFloat(document.getElementById('c27').innerText);
-    if (document.getElementById('s27').value < 2) {
-        f_grade += 1;
-    }
-
-    document.getElementById("LG28").innerText = calculateLetterGrade(document.getElementById('s28').value);
-    total_credit += parseFloat(document.getElementById('c28').innerText);
-    total_grade += parseFloat(document.getElementById('s28').value) * parseFloat(document.getElementById('c28').innerText);
-    if (document.getElementById('s28').value < 2) {
-        f_grade += 1;
-    }
-
-    document.getElementById("LG29").innerText = calculateLetterGrade(document.getElementById('s29').value);
-    total_credit += parseFloat(document.getElementById('c29').innerText);
-    total_grade += parseFloat(document.getElementById('s29').value) * parseFloat(document.getElementById('c29').innerText);
-    if (document.getElementById('s29').value < 2) {
-        f_grade += 1;
-    }
-
-    let gpa = total_grade / total_credit;
-
-    let PCCH2 = document.getElementById('PCCH2').innerText;
-    total_doubled_credit = total_credit + parseFloat(PCCH2);
-    // total_credit += parseFloat(PCCH2);
-
-    let PGPA2 = document.getElementById('PGPA2').value;
-    let CGPA = (parseFloat(PGPA2) * parseFloat(PCCH2) + gpa * total_credit) / total_doubled_credit;
-
-    document.getElementById("GPA2").innerText = gpa.toFixed(3);
-    document.getElementById("CCH2").innerText = total_doubled_credit.toFixed(3);
-    document.getElementById("CGPA2").innerText = CGPA.toFixed(3);
-
-    document.getElementById("remarks2").innerText = "F in " + f_grade;
-
-    alert('Your GPA is ' + CGPA.toFixed(3));
+    alert('Your CGPA is ' + CGPA.toFixed(3));
 });

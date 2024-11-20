@@ -18,19 +18,26 @@
         </div>
     </nav>
 
-    <ul class="nav nav-underline justify-content-center">
-        <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#gradingSystem">Grading system</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#firstSem">First Semester</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#secondSem">Second Semester</a>
-        </li>
-    </ul>
+    <br>
+    <div class="container">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content">
+                <li class="page-item disabled">
+                    <a class="page-link">Semester</a>
+                </li>
+                <li class="page-item active"><button class="page-link">1</button></li>
+                <li class="page-item"><button class="page-link">2</button></li>
+                <li class="page-item"><button class="page-link">3</button></li>
+                <li class="page-item"><button class="page-link">4</button></li>
+                <li class="page-item"><button class="page-link">5</button></li>
+                <li class="page-item"><button class="page-link">6</button></li>
+                <li class="page-item"><button class="page-link">7</button></li>
+                <li class="page-item"><button class="page-link">8</button></li>
+            </ul>
+        </nav>
+    </div>
 
-
+    <!-- a better  -->
     <!-- 
     ___                _   
     /'___)_             ( )_ 
@@ -40,9 +47,9 @@
    (_)   (_)(_)   (____/`\__)
                               -->
 
-
+    <br>
     <div class="container">
-        <h2 id="firstSem">First semester</h2>
+        <h2 id="SemName">First semester</h2>
     </div>
 
     <div class="container table-responsive">
@@ -64,342 +71,18 @@
                 </tr>
             </thead>
             <tbody id="VarTable">
-
             </tbody>
         </table>
-    </div>
-
-    <!-- 
-        ___                _   
-        /'___)_             ( )_ 
-       | (__ (_) _ __   ___ | ,_)
-       | ,__)| |( '__)/',__)| |  
-       | |   | || |   \__, \| |_ 
-       (_)   (_)(_)   (____/`\__)
-       previous one
-                                  -->
-
-    <div class="container">
-        <h2 id="firstSem">First semester</h2>
-    </div>
-
-    <div class="container table-responsive">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th scope="col">Serial</th>
-                    <th scope="col">Code</th>
-                    <th scope="col">Subject</th>
-                    <th scope="col">Credit</th>
-                    <th scope="col">GP</th>
-                    <th scope="col">LG</th>
-                    <th scope="col">GPA</th>
-                    <th scope="col">PGPA</th>
-                    <th scope="col">PCCH</th>
-                    <th scope="col">CGPA</th>
-                    <th scope="col">CCH</th>
-                    <th scope="col">Remarks</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>PHY-111</td>
-                    <td>Physics-I</td>
-                    <td id="c11">3</td>
-                    <td>
-                        <div class="row g-3 align-items-center">
-                            <input type="text" class="form-control" placeholder="0" id="s11">
-                        </div>
-                    </td>
-                    <td id="LG11">0</td>
-                    <td id="GPA1" rowspan="100">0</td>
-                    <td id="PGPA1" rowspan="100">0</td>
-                    <td id="PCCH1" rowspan="100">0</td>
-                    <td id="CGPA1" rowspan="100">0</td>
-                    <td id="CCH1" rowspan="100">0</td>
-                    <td id="remarks1" rowspan="100">0</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>PHY-112</td>
-                    <td>Physics-I Sessional.</td>
-                    <td id="c12">0.75</td>
-                    <td>
-                        <div class="row g-3 align-items-center">
-                            <input type="text" class="form-control" placeholder="0" id="s12">
-                        </div>
-                    </td>
-                    <td id="LG12">0</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>CHE-111</td>
-                    <td>Chemistry</td>
-                    <td id="c13">3</td>
-                    <td>
-                        <div class="row g-3 align-items-center">
-                            <input type="text" class="form-control" placeholder="0" id="s13">
-                        </div>
-                    </td>
-                    <td id="LG13">0</td>
-                </tr>
-                <tr>
-                    <th scope="row">4</th>
-                    <td>CHE-112</td>
-                    <td>Chemistry Sessional</td>
-                    <td id="c14">0.75</td>
-                    <td>
-                        <div class="row g-3 align-items-center">
-                            <input type="text" class="form-control" placeholder="0" id="s14">
-                        </div>
-                    </td>
-                    <td id="LG14">0</td>
-                </tr>
-                <tr>
-                    <th scope="row">5</th>
-                    <td>MAT-111</td>
-                    <td>Mathematics-I</td>
-                    <td id="c15">3</td>
-                    <td>
-                        <div class="row g-3 align-items-center">
-                            <input type="text" class="form-control" placeholder="0" id="s15">
-                        </div>
-                    </td>
-                    <td id="LG15">0</td>
-                </tr>
-                <tr>
-                    <th scope="row">6</th>
-                    <td>EEE-111</td>
-                    <td>Basic Electrical Engineering</td>
-                    <td id="c16">3</td>
-                    <td>
-                        <div class="row g-3 align-items-center">
-                            <input type="text" class="form-control" placeholder="0" id="s16">
-                        </div>
-                    </td>
-                    <td id="LG16">0</td>
-                </tr>
-                <tr>
-                    <th scope="row">7</th>
-                    <td>EEE-112</td>
-                    <td>Basic Electrical Engineering Sessional</td>
-                    <td id="c17">1.5</td>
-                    <td>
-                        <div class="row g-3 align-items-center">
-                            <input type="text" class="form-control" placeholder="0" id="s17">
-                        </div>
-                    </td>
-                    <td id="LG17">0</td>
-                </tr>
-                <tr>
-                    <th scope="row">8</th>
-                    <td>CIT-111</td>
-                    <td>Programming Language</td>
-                    <td id="c18">3</td>
-                    <td>
-                        <div class="row g-3 align-items-center">
-                            <input type="text" class="form-control" placeholder="0" id="s18">
-                        </div>
-                    </td>
-                    <td id="LG18">0</td>
-                </tr>
-                <tr>
-                    <th scope="row">9</th>
-                    <td>CIT-112</td>
-                    <td>Programming Language Sessional</td>
-                    <td id="c19">1.5</td>
-                    <td>
-                        <div class="row g-3 align-items-center">
-                            <input type="text" class="form-control" placeholder="0" id="s19">
-                        </div>
-                    </td>
-                    <td id="LG19">0</td>
-                </tr>
-                <tr>
-                    <th scope="row">10</th>
-                    <td>CCE-112</td>
-                    <td>Engineering Drawing</td>
-                    <td id="c110">0.75</td>
-                    <td>
-                        <div class="row g-3 align-items-center">
-                            <input type="text" class="form-control" placeholder="0" id="s110">
-                        </div>
-                    </td>
-                    <td id="LG110">0</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="container">
-        <div class="text-end">
-            <button type="button" class="btn btn-outline-success" id="calculate-1">Calculate CGPA</button>
+        <div class="container">
+            <div class="text-end">
+                <button type="button" class="btn btn-outline-success" id="calculate">Calculate CGPA</button>
+            </div>
         </div>
     </div>
-
-    <!-- _ 
-    ( )
-___    __     ___    _     ___     _| |
-/',__) /'__`\ /'___) /'_`\ /' _ `\ /'_` |
-\__, \(  ___/( (___ ( (_) )| ( ) |( (_| |
-(____/`\____)`\____)`\___/'(_) (_)`\__,_)
-        -->
-
-
-    <div class="container" id="secondSem">
-        <h2>Second semester</h2>
-    </div>
-    <div class="container table-responsive">
-        <table class="table table-hover table-striped-columns">
-            <thead>
-                <tr>
-                    <th scope="col">Serial</th>
-                    <th scope="col">Code</th>
-                    <th scope="col">Subject</th>
-                    <th scope="col">Credit</th>
-                    <th scope="col">GP</th>
-                    <th scope="col">LG</th>
-                    <th scope="col">GPA</th>
-                    <th scope="col">PGPA</th>
-                    <th scope="col">PCCH</th>
-                    <th scope="col">CGPA</th>
-                    <th scope="col">CCH</th>
-                    <th scope="col">Remarks</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>PHY-121</td>
-                    <td>Physics-II</td>
-                    <td id="c21">3</td>
-                    <td>
-                        <div class="row g-3 align-items-center">
-                            <input type="text" class="form-control" placeholder="0" id="s21">
-                        </div>
-                    </td>
-                    <td id="LG21">0</td>
-                    <td id="GPA2" rowspan="100">0</td>
-                    <!-- <td id="PGPA2" rowspan="100">0</td> -->
-                    <td rowspan="100">
-                        <div class="row g-3 align-items-center">
-                            <input type="text" class="form-control" placeholder="0" id="PGPA2">
-                        </div>
-                    </td>
-                    <td id="PCCH2" rowspan="100">20.25</td>
-                    <td id="CGPA2" rowspan="100">0</td>
-                    <td id="CCH2" rowspan="100">0</td>
-                    <td id="remarks2" rowspan="100">0</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>PHY-122</td>
-                    <td>Physics-II Sessional.</td>
-                    <td id="c22">0.75</td>
-                    <td>
-                        <div class="row g-3 align-items-center">
-                            <input type="text" class="form-control" placeholder="0" id="s22">
-                        </div>
-                    </td>
-                    <td id="LG22">0</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>MAT-121</td>
-                    <td>Mathematics-II</td>
-                    <td id="c23">3</td>
-                    <td>
-                        <div class="row g-3 align-items-center">
-                            <input type="text" class="form-control" placeholder="0" id="s23">
-                        </div>
-                    </td>
-                    <td id="LG23">0</td>
-                </tr>
-                <tr>
-                    <th scope="row">4</th>
-                    <td>CIT-121</td>
-                    <td>Discrete Mathematics</td>
-                    <td id="c24">3</td>
-                    <td>
-                        <div class="row g-3 align-items-center">
-                            <input type="text" class="form-control" placeholder="0" id="s24">
-                        </div>
-                    </td>
-                    <td id="LG24">0</td>
-                </tr>
-                <tr>
-                    <th scope="row">5</th>
-                    <td>LCM-121</td>
-                    <td>Communicative English</td>
-                    <td id="c25">2</td>
-                    <td>
-                        <div class="row g-3 align-items-center">
-                            <input type="text" class="form-control" placeholder="0" id="s25">
-                        </div>
-                    </td>
-                    <td id="LG25">0</td>
-                </tr>
-                <tr>
-                    <th scope="row">6</th>
-                    <td>EEE-121</td>
-                    <td>Electronic Device and Circuits</td>
-                    <td id="c26">3</td>
-                    <td>
-                        <div class="row g-3 align-items-center">
-                            <input type="text" class="form-control" placeholder="0" id="s26">
-                        </div>
-                    </td>
-                    <td id="LG26">0</td>
-                </tr>
-                <tr>
-                    <th scope="row">7</th>
-                    <td>EEE-122</td>
-                    <td>Electronic Device and Circuits Sessional</td>
-                    <td id="c27">1.5</td>
-                    <td>
-                        <div class="row g-3 align-items-center">
-                            <input type="text" class="form-control" placeholder="0" id="s27">
-                        </div>
-                    </td>
-                    <td id="LG27">0</td>
-                </tr>
-                <tr>
-                    <th scope="row">8</th>
-                    <td>CCE-121</td>
-                    <td>Object Oriented Programming</td>
-                    <td id="c28">3</td>
-                    <td>
-                        <div class="row g-3 align-items-center">
-                            <input type="text" class="form-control" placeholder="0" id="s28">
-                        </div>
-                    </td>
-                    <td id="LG28">0</td>
-                </tr>
-                <tr>
-                    <th scope="row">9</th>
-                    <td>CCE-122</td>
-                    <td>Object Oriented Programming Sessional</td>
-                    <td id="c29">1.5</td>
-                    <td>
-                        <div class="row g-3 align-items-center">
-                            <input type="text" class="form-control" placeholder="0" id="s29">
-                        </div>
-                    </td>
-                    <td id="LG29">0</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="container">
-        <div class="text-end">
-            <button type="button" class="btn btn-outline-success" id="calculate-2">Calculate CGPA</button>
-        </div>
-    </div>
-
-    <!-- ascii art of "extra" -->
 
 
     <!-- Grading system reference -->
+    <br><br>
     <div class="container">
         <div class="row">
             <div class="col">
@@ -511,14 +194,42 @@ ___    __     ___    _     ___     _| |
    (_)  `\___/'`\___/'`\__)`\____)(_)   
                                          -->
 
+
+    <br><br>
     <footer class="text-center">
+        <div class="spinner-grow text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-grow text-secondary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-grow text-success" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-grow text-danger" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-grow text-warning" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-grow text-info" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-grow text-light" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-grow text-dark" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
         <div class="text-center mt-4">
             <p class="mb-0">&copy; 2024 <a href="https://github.com/SharafatKarim/">Sharafat Karim</a> | <a
                     href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></p>
         </div>
     </footer>
 
-    <script src="logic.js"></script>
+    <br>
+
+    <script type="module" src="logic.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
