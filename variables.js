@@ -27,7 +27,7 @@ export const SEM_INFO = {
   third: {
     subjects: [
       { code: 'CIT-211', subject: 'Data Structure and Algorithms', credit: 3 },
-      { code: 'CIT-212', subject: 'Data Structure and Algorithms Sessional', credit: 1.50 },
+      { code: 'CIT-212', subject: 'Data Structure and Algorithms Sessional', credit: 1.5 },
       { code: 'CIT-213', subject: 'Software Engineering', credit: 3 },
       { code: 'CCE-221', subject: 'Data Communication and Engineering', credit: 3 },
       { code: 'MAT-211', subject: 'Mathematics-III', credit: 3 },
@@ -39,14 +39,14 @@ export const SEM_INFO = {
   fourth: {
     subjects: [
       { code: 'CCE-221', subject: 'Digital Logic Design', credit: 3 },
-      { code: 'CCE-222', subject: 'Digital Logic Design Sessional', credit: 1.50 },
+      { code: 'CCE-222', subject: 'Digital Logic Design Sessional', credit: 1.5 },
       { code: 'CCE-223', subject: 'Database System', credit: 3 },
-      { code: 'CCE-224', subject: 'Database System Sessional', credit: 1.50 },
+      { code: 'CCE-224', subject: 'Database System Sessional', credit: 1.5 },
       { code: 'AES-221', subject: 'Government and Economics', credit: 3 },
       { code: 'MAT-221', subject: 'Mathematics-IV', credit: 3 },
       { code: 'CIT-220', subject: 'Web Programming Project', credit: 1.5 },
       { code: 'CIT-221', subject: 'Information System Analysis and Design', credit: 3 },
-      { code: 'CIT-222', subject: 'Information System Analysis and Design Sessional', credit: 1.50 },
+      { code: 'CIT-222', subject: 'Information System Analysis and Design Sessional', credit: 1.5 },
       { code: 'CIT-224', subject: 'Computer Programming Contest-II', credit: 0.0 }],
     previous_cch: 62.0
   },
@@ -61,7 +61,7 @@ export const SEM_INFO = {
       { code: 'CCE-311', subject: 'Numerical Methods', credit: 3 },
       { code: 'CCE-312', subject: 'Numerical Methods Sessional', credit: 0.75 },
       { code: 'CCE-313', subject: 'Computer Networks', credit: 3 },
-      { code: 'CCE-314', subject: 'Computer Networks Sessional', credit: 1.50 }],
+      { code: 'CCE-314', subject: 'Computer Networks Sessional', credit: 1.5 }],
     previous_cch: 83.0
   },
   sixth: {
@@ -72,11 +72,36 @@ export const SEM_INFO = {
       { code: 'CIT-323', subject: 'Simulation and Modeling', credit: 3 },
       { code: 'CIT-324', subject: 'Simulation and Modeling Sessional', credit: 1.5 },
       { code: 'EEE-321', subject: 'Digital Electronics and Pulse Techniques', credit: 3 },
-      { code: 'EEE-322', subject: 'Digital Electronics and Pulse Techniques Sessional', credit: 1.5 },
+      { code: 'EEE-322', subject: 'Digital Electronics and Pulse Techniques Sessional', credit: 0.75 },
       { code: 'CCE-320', subject: 'Computer Programing Contest-III', credit: 0.0 },
       { code: 'CCE-321', subject: 'Computer Peripheral and Interfacing', credit: 3 },
       { code: 'CCE-322', subject: 'Computer Peripheral and Interfacing Sessional', credit: 1.5 },
-      { code: 'CCE-323', subject: 'Optical Fiber Communication', credit: 3 }],
+      { code: 'CCE-323', subject: 'Machine Learning', credit: 3 }],
     previous_cch: 104.75
+  },
+  seventh: {
+    subjects: [
+      { code: 'CSE-410', subject: 'Project/Thesis', credit: 3 },
+      { code: 'CSE-412', subject: 'Industrial Training', credit: 1 },
+      { code: 'CCE-411', subject: 'Algorithm Engineering', credit: 3 },
+      { code: 'CCE-413', subject: 'VLSI Design', credit: 3 },
+      { code: 'CCE-415', subject: 'Network Routing and Switching', credit: 3 },
+      { code: 'CCE-416', subject: 'Network Routing and Switching Sessional', credit: 1.5 },
+      { code: 'CCE-417', subject: 'Data Warehousing and Mining', credit: 3 },
+      { code: 'CIT-411', subject: 'Compiler Design and Automata Theory', credit: 3 },
+      { code: 'CIT-412', subject: 'Compiler Design and Automata Theory Sessional', credit: 1.5 }],
+    previous_cch: 126.5
+  },
+  eighth: {
+    subjects: [
+      { code: 'CSE-420', subject: 'Project/Thesis', credit: 3 },
+      { code: 'CSE-421', subject: 'Seminar', credit: 0.75 },
+      { code: 'CCE-421', subject: 'Cryptography and Network Security', credit: 3 },
+      { code: 'CCE-423', subject: 'Wireless and Cellular Communication', credit: 3 },
+      { code: 'CIT-421', subject: 'Computer Graphics and Image Processing', credit: 3 },
+      { code: 'CIT-422', subject: 'Computer Graphics and Image Processing Sessional', credit: 0.75 },
+      { code: 'CIT-423', subject: 'OPTIONAL', credit: 3 },
+    ],
+    previous_cch: 148.5
   }
 }
