@@ -1,3 +1,64 @@
+var selected_sem = 1;
+const SEM_INFO = {
+    first: {
+        subjects: [{ code: 'PHY-111', subject: 'Physics-I', credit: 3 },
+        { code: 'PHY-112', subject: 'Physics-I Sessional.', credit: 0.75 },
+        { code: 'CHE-111', subject: 'Chemistry', credit: 3 },
+        { code: 'CHE-112', subject: 'Chemistry Sessional', credit: 0.75 },
+        { code: 'MAT-111', subject: 'Mathematics-I', credit: 3 },
+        { code: 'EEE-111', subject: 'Basic Electrical Engineering', credit: 3 },
+        { code: 'EEE-112', subject: 'Basic Electrical Engineering Sessional', credit: 1.5 },
+        { code: 'CIT-111', subject: 'Programming Language', credit: 3 },
+        { code: 'CIT-112', subject: 'Programming Language Sessional', credit: 1.5 },
+        { code: 'CCE-112', subject: 'Engineering Drawing', credit: 0.75 }],
+        previous_cch: 0
+    },
+    second: {
+        subjects: [{ code: 'PHY-121', subject: 'Physics-II', credit: 3 },
+        { code: 'PHY-122', subject: 'Physics-II Sessional.', credit: 0.75 },
+        { code: 'MAT-121', subject: 'Mathematics-II', credit: 3 },
+        { code: 'CIT-121', subject: 'Discrete Mathematics', credit: 3 },
+        { code: 'LCM-121', subject: 'Communicative English', credit: 2 },
+        { code: 'EEE-121', subject: 'Electronic Device and Circuits', credit: 3 },
+        { code: 'EEE-122', subject: 'Electronic Device and Circuits Sessional', credit: 1.5 },
+        { code: 'CCE-121', subject: 'Object Oriented Programming', credit: 3 },
+        { code: 'CCE-122', subject: 'Object Oriented Programming Sessional', credit: 1.5 }],
+        previous_cch: 20.25
+    }
+}
+
+function tableDrawer(sem) {
+    var myTableBodyDiv = document.getElementById("VarTable");
+    if (myTableBodyDiv.hasChildNodes()) {
+        myTableBodyDiv.removeChild(myTableBodyDiv.childNodes[0]);
+    }
+
+    var subjects = sem.subjects;
+    for (var i = 0; i < subjects.length; i++) {
+        var tr = document.createElement('TR');
+
+        var th = document.createElement('TH');
+        th.appendChild(document.createTextNode(i + 1));
+        tr.appendChild(th);
+
+        var td = document.createElement('TD');
+        td.appendChild(document.createTextNode(subjects[i].code));
+        tr.appendChild(td);
+
+        var td = document.createElement('TD');
+        td.appendChild(document.createTextNode(subjects[i].subject));
+        tr.appendChild(td);
+
+        var td = document.createElement('TD');
+        td.appendChild(document.createTextNode(subjects[i].credit));
+        tr.appendChild(td);
+
+        myTableBodyDiv.appendChild(tr);
+    }
+}
+
+tableDrawer(SEM_INFO.first);
+
 function calculateLetterGrade(grade) {
     if (grade >= 4) {
         return 'A+';
@@ -26,14 +87,14 @@ document.getElementById('calculate-1').addEventListener('click', function () {
     let total_grade = 0;
     let total_credit = 0;
     let f_grade = 0;
-    
+
     document.getElementById("LG11").innerText = calculateLetterGrade(document.getElementById('s11').value);
     total_credit += parseFloat(document.getElementById('c11').innerText);
     total_grade += parseFloat(document.getElementById('s11').value) * parseFloat(document.getElementById('c11').innerText);
     if (document.getElementById('s11').value < 2) {
         f_grade += 1;
     }
-    
+
     document.getElementById("LG12").innerText = calculateLetterGrade(document.getElementById('s12').value);
     total_credit += parseFloat(document.getElementById('c12').innerText);
     total_grade += parseFloat(document.getElementById('s12').value) * parseFloat(document.getElementById('c12').innerText);
@@ -96,7 +157,7 @@ document.getElementById('calculate-1').addEventListener('click', function () {
     if (document.getElementById('s110').value < 2) {
         f_grade += 1;
     }
-    
+
     let gpa = total_grade / total_credit;
 
     let PCCH1 = document.getElementById('PCCH1').innerText;
@@ -109,7 +170,7 @@ document.getElementById('calculate-1').addEventListener('click', function () {
     document.getElementById("GPA1").innerText = gpa.toFixed(3);
     document.getElementById("CCH1").innerText = total_doubled_credit.toFixed(3);
     document.getElementById("CGPA1").innerText = CGPA.toFixed(3);
-    
+
     document.getElementById("remarks1").innerText = "F in " + f_grade;
 
     alert('Your GPA is ' + CGPA.toFixed(3));
@@ -119,14 +180,14 @@ document.getElementById('calculate-2').addEventListener('click', function () {
     let total_grade = 0;
     let total_credit = 0;
     let f_grade = 0;
-    
+
     document.getElementById("LG21").innerText = calculateLetterGrade(document.getElementById('s21').value);
     total_credit += parseFloat(document.getElementById('c21').innerText);
     total_grade += parseFloat(document.getElementById('s21').value) * parseFloat(document.getElementById('c21').innerText);
     if (document.getElementById('s21').value < 2) {
         f_grade += 1;
     }
-    
+
     document.getElementById("LG22").innerText = calculateLetterGrade(document.getElementById('s22').value);
     total_credit += parseFloat(document.getElementById('c22').innerText);
     total_grade += parseFloat(document.getElementById('s22').value) * parseFloat(document.getElementById('c22').innerText);
