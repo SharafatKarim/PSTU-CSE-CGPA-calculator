@@ -76,7 +76,7 @@ export const SEM_INFO = {
       { code: 'CCE-320', subject: 'Computer Programing Contest-III', credit: 0.0 },
       { code: 'CCE-321', subject: 'Computer Peripheral and Interfacing', credit: 3 },
       { code: 'CCE-322', subject: 'Computer Peripheral and Interfacing Sessional', credit: 1.5 },
-      { code: 'CCE-323', subject: 'Machine Learning', credit: 3 }],
+      { code: 'CCE-323', subject: 'Optical Fiber Communication', credit: 3 }],
     previous_cch: 104.75
   },
   seventh: {
